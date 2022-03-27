@@ -10,6 +10,7 @@ import {
   Alert,
 } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+
 const TopHero = ({ weatherData, geoLocationData, searchGeoLocation }) => {
   return (
     <ImageBackground
