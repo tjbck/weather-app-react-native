@@ -38,6 +38,7 @@ const Error = ({ errorMessage }) => {
             marginTop: -100,
             paddingBottom: 20,
           }}
+          testID="error-message"
         >
           An Error has occured: {"\n"}
           {errorMessage}

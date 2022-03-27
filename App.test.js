@@ -1,16 +1,26 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import App from "./App"
+import Error from "./components/Error"
 
 
-describe("our sample test", () => {
-  it("5*5 should be 25", () => {
-    expect(5*5).toBe(25)
+describe("<Error/>", () => {
+
+  
+  it("should display a prop message", () => {
+    const errorMessage = "test"
+    const {getByTestId, getByText, queryByTestId, toJSON} = render(<Error errorMessage={errorMessage} />)
+
+    expect(getByTestId('error-message')).toBe(getByText(errorMessage))
   })
 })
 
-describe('<App/>', () => {
-  it('should match snapshot', () => {
-    const snap = render(<App />).toJSON();
-  })
-})
+// describe('<App/>', () => {
+//   it('should match snapshot', () => {
+
+
+
+
+
+//     const snap = render(<App />)
+//   })
+// })
