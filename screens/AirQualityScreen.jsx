@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView } from "react-native";
-import AirQualityDetails from "../components/airquality/AirQualityDetails";
-import AirQuality from "../components/home/AirQuality";
+import AirQualityDetails from "../components/airquality/AirQualityDetails.jsx";
+import AirQuality from "../components/home/AirQuality.jsx";
 
 const AirQualityScreen = ({ route }) => {
   const { airQualityData } = route.params;

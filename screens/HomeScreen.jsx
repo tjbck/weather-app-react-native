@@ -13,14 +13,14 @@ import {
 import * as Location from "expo-location";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import Loading from "../components/Loading";
-import Error from "../components/Error";
+import Loading from "../components/Loading.jsx";
+import Error from "../components/Error.jsx";
 
-import TopHero from "../components/home/TopHero";
-import AirQuality from "../components/home/AirQuality";
-import Forecast from "../components/home/Forecast";
-import HourlyWeather from "../components/home/HourlyWeather";
-import TitledCard from "../components/common/TitledCard";
+import TopHero from "../components/home/TopHero.jsx";
+import AirQuality from "../components/home/AirQuality.jsx";
+import Forecast from "../components/home/Forecast.jsx";
+import HourlyWeather from "../components/home/HourlyWeather.jsx";
+import TitledCard from "../components/common/TitledCard.jsx";
 
 const tokens = {
   aqi: "f6082c912b8ae18ca6ee21c2c32829c53d953e88",
