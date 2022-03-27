@@ -12,8 +12,6 @@ describe("our sample test", () => {
 describe('<App/>', () => {
   it('should match snapshot', () => {
     const snap = render(<App />).toJSON();
-
     expect(snap).toMatchSnapshot();
-
   })
 })
