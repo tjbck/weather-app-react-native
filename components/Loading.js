@@ -26,6 +26,7 @@ const Loading = ({
             marginTop: -100,
             paddingBottom: 20,
           }}
+          testID="message"
         >
           {message}
         </Text>

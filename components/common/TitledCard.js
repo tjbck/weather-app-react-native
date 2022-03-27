@@ -16,6 +16,7 @@ const TitledCard = ({ onPress = null, title, children }) => {
             fontFamily: "Poppins_600SemiBold",
             marginBottom: 4,
           }}
+          testID="title"
         >
           {title}
         </Text>
@@ -30,7 +31,7 @@ const TitledCard = ({ onPress = null, title, children }) => {
         />
 
         {onPress ? (
-          <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>
+          <TouchableOpacity onPress={onPress} testId="touchable">{children}</TouchableOpacity>
         ) : (
           <>{children}</>
         )}

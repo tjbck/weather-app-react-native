@@ -12,9 +12,9 @@ import {
   Poppins_800ExtraBold,
 } from "@expo-google-fonts/dev";
 
-import HomeScreen from "./screens/HomeScreen.jsx";
-import AirQualityScreen from "./screens/AirQualityScreen.jsx";
-import WeatherScreen from "./screens/WeatherScreen.jsx";
+import HomeScreen from "./screens/HomeScreen.js";
+import AirQualityScreen from "./screens/AirQualityScreen.js";
+import WeatherScreen from "./screens/WeatherScreen.js";
 
 const Stack = createNativeStackNavigator();
 
