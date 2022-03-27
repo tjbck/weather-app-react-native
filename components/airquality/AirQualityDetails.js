@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import TitledCard from "../common/TitledCard.jsx";
+import TitledCard from "../common/TitledCard.js";
 
 const AirQualityDetails = ({ airQualityData }) => {
   return (

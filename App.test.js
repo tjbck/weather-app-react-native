@@ -3,14 +3,16 @@ import {render} from '@testing-library/react-native';
 import Error from "./components/Error"
 
 
-describe("<Error/>", () => {
-
-  
+describe("<Error/>", () => {  
   it("should display a prop message", () => {
     const errorMessage = "test"
-    const {getByTestId, getByText, queryByTestId, toJSON} = render(<Error errorMessage={errorMessage} />)
+    const {getByTestId, getByDisplayValue, queryByTestId, toJSON} = render(<Error errorMessage={errorMessage} />)
 
-    expect(getByTestId('error-message')).toBe(getByText(errorMessage))
+    const element = getByTestId('error-message')
+
+    console.log(getByDisplayValue('An Error has occured'))
+
+    expect(element).toBe(1)
   })
 })
 
