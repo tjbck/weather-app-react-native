@@ -92,6 +92,13 @@ describe("<AirQualityDetails/>", () => {
       render(<AirQualityDetails airQualityData={airQualityData} />)
     ).not.toThrow();
   });
+
+  it("has 5 children", () => {
+    const tree = render(
+      <AirQualityDetails airQualityData={airQualityData} />
+    ).toJSON();
+    expect(tree.children.length).toBe(5);
+  });
 });
 
 describe("<AirQuality/>", () => {
@@ -105,6 +112,12 @@ describe("<AirQuality/>", () => {
       render(<AirQuality airQualityData={airQualityData} />)
     ).not.toThrow();
   });
+  it("has 2 children", () => {
+    const tree = render(
+      <AirQuality airQualityData={airQualityData} />
+    ).toJSON();
+    expect(tree.children.length).toBe(2);
+  });
 });
 
 describe("<Forecast/>", () => {
@@ -115,6 +128,10 @@ describe("<Forecast/>", () => {
   });
   it("should throw not an error when no props given", () => {
     expect(() => render(<Forecast weatherData={weatherData} />)).not.toThrow();
+  });
+  it("has 1 child", () => {
+    const tree = render(<Forecast weatherData={weatherData} />).toJSON();
+    expect(tree.children.length).toBe(1);
   });
 });
 
@@ -142,6 +159,10 @@ describe("<WeatherDetails/>", () => {
     expect(() =>
       render(<WeatherDetails weatherData={weatherData} />)
     ).not.toThrow();
+  });
+  it("has 7 children", () => {
+    const tree = render(<WeatherDetails weatherData={weatherData} />).toJSON();
+    expect(tree.children.length).toBe(7);
   });
 });
 
