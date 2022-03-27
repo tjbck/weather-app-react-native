@@ -132,8 +132,27 @@ const HomeScreen = ({ navigation }) => {
     ).then((res) => res.json());
 
     if (refreshing) {
-      Alert.alert(`Your location has been set to "${res[0].name}"`);
+      Alert.alert(
+        `Weather location has been set to your current location "${res[0].name}"`
+      );
     }
+    return res;
+  };
+
+  const getGeoLocationFromInput = async (cityName) => {
+    const res = await fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${tokens.weather}`
+    ).then((res) => res.json());
+
+    if (res.length > 0) {
+      Alert.alert(`Weather location has been set to "${res[0].name}"`);
+      setLocation({
+        coords: { latitude: res[0].lat, longitude: res[0].lon },
+      });
+    } else {
+      Alert.alert(`City named "${cityName}" does not exist :/`);
+    }
+
     return res;
   };
 
@@ -157,6 +176,7 @@ const HomeScreen = ({ navigation }) => {
                 <TopHero
                   weatherData={weatherData}
                   geoLocationData={geoLocationData}
+                  searchGeoLocation={getGeoLocationFromInput}
                 />
 
                 <View

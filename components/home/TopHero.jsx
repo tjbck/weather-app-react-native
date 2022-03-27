@@ -1,9 +1,16 @@
 import React from "react";
 
-import { Text, View, Image, ImageBackground } from "react-native";
+import {
+  Platform,
+  Text,
+  View,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
-
-const TopHero = ({ weatherData, geoLocationData }) => {
+const TopHero = ({ weatherData, geoLocationData, searchGeoLocation }) => {
   return (
     <ImageBackground
       source={{
@@ -83,6 +90,33 @@ const TopHero = ({ weatherData, geoLocationData }) => {
             >
               {new Date(weatherData.daily[0].dt * 1000).toLocaleDateString()}
             </Text>
+          </View>
+
+          <View
+            style={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                if (Platform.OS !== "ios") {
+                  Alert.alert(
+                    "Alert prompt only works with IOS, please use an iphone!"
+                  );
+                }
+                Alert.prompt(
+                  "Search Location",
+                  "Enter a city name!",
+                  (cityName) => {
+                    searchGeoLocation(cityName);
+                  }
+                );
+              }}
+            >
+              <FontAwesome5 name="search" size={24} color="white" />
+            </TouchableOpacity>
           </View>
         </View>
 
